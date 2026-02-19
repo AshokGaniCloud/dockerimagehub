@@ -88,7 +88,7 @@ jobs:
           password: ${{env.DOCKER_PASSWORD}}
       - name: Build Image And Push
         run: |
-           docker build -t mlapp:v1 -f DockerFile
+           docker build -f DockerFile -t mlapp:v1 . 
            docker images
            docker tag mlapp:v1 ashokgani6300/mlapp:v1
            echo ${{ env.DOCKER_PASSWORD }} | docker login -u ${{ env.DOCKER_USERNAME }} --password-stdin docker.io
