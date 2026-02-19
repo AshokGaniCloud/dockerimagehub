@@ -31,7 +31,7 @@ jobs:
       - name: Checkout Self
         uses: actions/checkout@v4
       - name: Docker build
-        run: docker build . --file DockerFile --tag workflow-test:$(date +%s)
+        run: docker build . --file Dockerfile --tag workflow-test:$(date +%s)
         
   BuildPython:
     runs-on: ubuntu-latest
